@@ -182,8 +182,8 @@ pre code {
 
 <div id="my-first-map-with-leaflet" class="section level2">
 <h2>My first map with Leaflet</h2>
-<div id="htmlwidget-36f7c81f8d96798ace42" style="width:672px;height:480px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-36f7c81f8d96798ace42">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]}]},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-f844fdbc418e7f44cbf7" style="width:672px;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f844fdbc418e7f44cbf7">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]}]},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="add-markers" class="section level2">
 <h2>Add markers</h2>
@@ -192,8 +192,8 @@ my_map &lt;- my_map %&gt;%
   addMarkers(lat = martiniToren[1], lng = martiniToren[2],
              popup = &quot;Martini toren, Groningen&quot;)
 my_map</code></pre>
-<div id="htmlwidget-12ac55305f1c67b1b4ac" style="width:672px;height:480px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-12ac55305f1c67b1b4ac">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[53.2195561971862,6.56809244024088,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"Martini toren, Groningen",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[53.2195561971862,53.2195561971862],"lng":[6.56809244024088,6.56809244024088]}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-ee9f0266c1f125652f4d" style="width:672px;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ee9f0266c1f125652f4d">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[53.2195561971862,6.56809244024088,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"Martini toren, Groningen",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[53.2195561971862,53.2195561971862],"lng":[6.56809244024088,6.56809244024088]}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="add-multiple-markers" class="section level2">
 <h2>Add multiple markers</h2>
@@ -203,8 +203,31 @@ df %&gt;%
   leaflet() %&gt;%
   addTiles() %&gt;%
   addMarkers(popup = paste(martiniToren[1], martiniToren[2]))</code></pre>
-<div id="htmlwidget-873b56ba7640b44e0feb" style="width:672px;height:480px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-873b56ba7640b44e0feb">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[[53.3093004522726,53.3012994245042,53.2562846883081,53.1525066830099,53.2542752792474,53.1740987258379,53.3001956916761,53.2092888460841,53.194344686798,53.2158808942765,53.2583405689218,53.1309711223815,53.2854184487716,53.1799264034137,53.2590697050441,53.2419388200038,53.1390855404895,53.3086571460471,53.1732048142583,53.1934482075155],[6.52071004019571,6.64937180665773,6.49787752631572,6.52524174645995,6.51075332121444,6.50243837352363,6.51899318269906,6.47447883503963,6.58602533269194,6.53407388258246,6.4950642038927,6.59267455822309,6.66277312783976,6.59144332803306,6.62212777387803,6.53847905894262,6.52158884111312,6.55546918905792,6.50351613111315,6.54573981550974],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"53.2195561971862 6.56809244024088",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[53.1309711223815,53.3093004522726],"lng":[6.47447883503963,6.66277312783976]}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-78895ab409a35346afc5" style="width:672px;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-78895ab409a35346afc5">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[[53.2029848093048,53.1365779664249,53.195134654443,53.2736948341012,53.2789469186563,53.1692399618563,53.2155038352006,53.2473328218677,53.1965641009968,53.1558336389598,53.2148298921876,53.1410452279143,53.2211501065523,53.1776157222569,53.2798649719797,53.2017403238334,53.173406633164,53.2656394714836,53.254018470959,53.2220564308457],[6.52391693530125,6.50196557388162,6.51879357135375,6.56700347753694,6.56932027636548,6.58633271193584,6.51444367778939,6.5522122954343,6.51851724524503,6.46971888126326,6.47550059657996,6.54055442813304,6.51297878314262,6.66427541555357,6.5356161664099,6.59664999152054,6.58453641085406,6.56926008256604,6.48135395560865,6.49878487231662],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"53.2195561971862 6.56809244024088",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[53.1365779664249,53.2798649719797],"lng":[6.46971888126326,6.66427541555357]}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="making-custom-markers" class="section level2">
+<h2>Making Custom Markers</h2>
+<p>The blue markers that leaflet comes packaged with may not be enough depending on what you’re mapping. Thankfully you can make your own markers from <code>.png</code> files.</p>
+<pre class="r"><code>triventoIcon &lt;- makeIcon(
+  iconUrl = &quot;https://www.trivento.nl/hubfs/Website-2020/img/trivlogo.png&quot;,
+  iconWidth = 50, iconHeight = 50 * (585/1200),
+  #iconWidth = 31*215/230, iconHeight = 31,
+  iconAnchorX = 31*215/230/2, iconAnchorY = 16
+)
+
+triventoLatLong &lt;- data.frame(
+  lat = c(52.1965808530428),
+  lng = c(5.398014240571794))
+
+triventoSite &lt;- &quot;&lt;a href=&#39;https://www.trivento.nl/&#39;&gt;Trivento&lt;/a&gt;&quot;
+
+triventoLatLong %&gt;% 
+  leaflet() %&gt;%
+  addTiles() %&gt;%
+  addMarkers(icon = triventoIcon, popup = triventoSite)</code></pre>
+<div id="htmlwidget-3c907180127d2945558b" style="width:672px;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3c907180127d2945558b">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[52.1965808530428,5.39801424057179,{"iconUrl":{"data":"https://www.trivento.nl/hubfs/Website-2020/img/trivlogo.png","index":0},"iconWidth":50,"iconHeight":24.375,"iconAnchorX":14.4891304347826,"iconAnchorY":16},null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"<a href='https://www.trivento.nl/'>Trivento<\/a>",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[52.1965808530428,52.1965808530428],"lng":[5.39801424057179,5.39801424057179]}},"evals":[],"jsHooks":[]}</script>
 </div>
 
 

@@ -36,3 +36,29 @@ df %>%
   addMarkers(popup = paste(martiniToren[1], martiniToren[2]))
 ```
 
+## Making Custom Markers
+
+The blue markers that leaflet comes packaged with may not be
+enough depending on what you're mapping. Thankfully you can
+make your own markers from `.png` files.
+
+```{r}
+triventoIcon <- makeIcon(
+  iconUrl = "https://www.trivento.nl/hubfs/Website-2020/img/trivlogo.png",
+  iconWidth = 50, iconHeight = 50 * (585/1200),
+  #iconWidth = 31*215/230, iconHeight = 31,
+  iconAnchorX = 31*215/230/2, iconAnchorY = 16
+)
+
+triventoLatLong <- data.frame(
+  lat = c(52.1965808530428),
+  lng = c(5.398014240571794))
+
+triventoSite <- "<a href='https://www.trivento.nl/'>Trivento</a>"
+
+triventoLatLong %>% 
+  leaflet() %>%
+  addTiles() %>%
+  addMarkers(icon = triventoIcon, popup = triventoSite)
+
+```
