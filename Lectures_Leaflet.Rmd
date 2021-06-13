@@ -19,20 +19,20 @@ my_map
 
 ## Add markers
 ```{r}
-home <- c(52.26328566358967, 6.170381275769941)
+martiniToren <- c(53.21955619718622, 6.5680924402408785)
 my_map <- my_map %>%
-  addMarkers(lat = home[1], lng = home[2],
-             popup = "Paul's home")
+  addMarkers(lat = martiniToren[1], lng = martiniToren[2],
+             popup = "Martini toren, Groningen")
 my_map
 ```
 
 ## Add multiple markers
 ```{r}
-df <- data.frame(lat = runif(20, min=home[1] - 0.1, max=home[1] + 0.1),
-                 lng = runif(20, min=home[2] - 0.1, max=home[2] + 0.1))
+df <- data.frame(lat = runif(20, min=martiniToren[1] - 0.1, max=martiniToren[1] + 0.1),
+                 lng = runif(20, min=martiniToren[2] - 0.1, max=martiniToren[2] + 0.1))
 df %>%
   leaflet() %>%
   addTiles() %>%
-  addMarkers(popup = paste(home[1], home[2]))
+  addMarkers(popup = paste(martiniToren[1], martiniToren[2]))
 ```
 
