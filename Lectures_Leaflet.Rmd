@@ -122,5 +122,19 @@ df %>%
 ```
 
 
+## Mapping Circle Markers
+
+Instead of adding markers or clusters you can easily add
+circle markers using `addCircleMarkers()`.
+
+```{r}
+df <- data.frame(lat = runif(20, min=martiniToren[1] - 0.1, max=martiniToren[1] + 0.1),
+                 lng = runif(20, min=martiniToren[2] - 0.1, max=martiniToren[2] + 0.1))
+
+df %>% 
+  leaflet() %>%
+  addTiles() %>%
+  addCircleMarkers()
+```
 
 
