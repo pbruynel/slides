@@ -18,6 +18,12 @@ my_map
 ```
 
 ## Add markers
+You can add markers to your map one at a time using the
+`addMarkers()` function by specifying the longitude and
+latitude. ([Here's](https://twitter.com/drob/status/719927537330040832)
+a tip if you tend to mix them up.) You can specify popup
+text for when you click on the marker with the `popup` 
+argument.
 ```{r}
 martiniToren <- c(53.21955619718622, 6.5680924402408785)
 my_map <- my_map %>%
@@ -27,6 +33,10 @@ my_map
 ```
 
 ## Add multiple markers
+Adding one marker at a time is often not practical if you
+want to display many markers. If you have a data frame with
+columns `lat` and `lng` you can pipe that data frame into
+`leaflet()` to add all the points at once.
 ```{r}
 df <- data.frame(lat = runif(20, min=martiniToren[1] - 0.1, max=martiniToren[1] + 0.1),
                  lng = runif(20, min=martiniToren[2] - 0.1, max=martiniToren[2] + 0.1))
@@ -63,9 +73,44 @@ triventoLatLong %>%
 
 ```
 
+## Adding Multiple Popups
+When adding multiple markers to a map, you may want to add
+popups for each marker. You can specify a string of plain
+text for each popup, or you can provide HTML which will be
+rendered inside of each popup.
+
+```{r}
+rugIcon <- makeIcon(
+  iconUrl = "https://www.rug.nl/_definition/shared/images/marker.png",
+  #iconWidth = 31*215/230, iconHeight = 31,
+  iconAnchorX = 31*215/230/2, iconAnchorY = 16
+)
+
+rugLatLong <- data.frame(
+  lat = c(53.249896315224845, 53.219094188597275, 53.219339994886695, 53.237403442601135),
+  lng = c(6.525655438977048, 6.563148521621385, 6.563000086099349, 6.531661220552787))
+
+rugSites <- c(
+  "<a href='https://www.rug.nl/staff/location/5711/'>KVI-CART</a>",
+  "<a href='https://www.rug.nl/staff/location/1211'>Universiteits Bibliotheek</a>",
+  "<a href='https://www.rug.nl/staff/location/1111'>Academiegebouw</a>",
+  "<a href='https://www.rug.nl/staff/location/5211'>Sprotcentrum</a>"
+)
+
+rugLatLong %>% 
+  leaflet() %>%
+  addTiles() %>%
+  addMarkers(icon = rugIcon, popup = rugSites)
+```
+
 
 ## Mapping Clusters
-
+Sometimes you might have so many points on a map that it
+doesn't make sense to plot every marker. In these situations
+leaflet allows you to plot clusters of markers using
+`addMarkers(clusterOptions = markerClusterOptions())`. When
+you zoom in to each cluster, the clusters will separate until
+you can see the individual markers.
 ```{r}
 df <- data.frame(lat = runif(500, min=martiniToren[1] - 0.1, max=martiniToren[1] + 0.1),
                  lng = runif(500, min=martiniToren[2] - 0.1, max=martiniToren[2] + 0.1))
