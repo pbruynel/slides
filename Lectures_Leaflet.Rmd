@@ -162,10 +162,29 @@ cityCenterIcon <- makeIcon(
   iconWidth = 32, iconHeight = 32,
   iconAnchorX = 0, iconAnchorY = 0)
 
+gemeenteSites <- c(
+  paste("<a href='https://gemeente.groningen.nl/'>Gemeente Groningen, locatie Groningen</a><br>
+  Population: ", md_cities$pop[1]),
+  paste("<a href='https://gemeente.groningen.nl/'>Gemeente Groningen, locatie Haren</a><br>
+  Population: ", md_cities$pop[2]),
+  paste("<a href='https://www.midden-groningen.nl/'>Gemeente Midden-Groningen, locatie Hoogezand-Sappemeer</a><br>
+  Population: ", md_cities$pop[3]),
+  paste("<a href='https://hethogeland.nl/'>Gemeente Het Hogeland, locatie Bedum</a><br>
+  Population: ", md_cities$pop[4]),
+  paste("<a href='https://hethogeland.nl/'>Gemeente Het Hogeland, locatie Winsum</a><br>
+  Population: ", md_cities$pop[5]),
+  paste("<a href='https://www.eemsdelta.nl/contact'>Gemeente Eemsdelta, locatie Delfzijl</a><br>
+  Population: ", md_cities$pop[6]),
+  paste("<a href='https://www.westerkwartier.nl/'>Gemeente Westerkwartier, locatie Zuidhorn</a><br>
+  Population: ", md_cities$pop[7]),
+  paste("<a href='https://www.westerkwartier.nl/'>Gemeente Westerkwartier, locatie Leek</a><br>
+  Population: ", md_cities$pop[8])
+)
+
 
 md_cities %>%
     leaflet() %>%
     addTiles() %>%
     addCircles(weight = 1, radius = sqrt(md_cities$pop) * 12) %>%
-    addMarkers(icon = cityCenterIcon)
+    addMarkers(icon = cityCenterIcon, popup = gemeenteSites)
 ```
