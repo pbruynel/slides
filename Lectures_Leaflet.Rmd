@@ -144,11 +144,9 @@ including circles and squares. The code below draws a map
 where the circle on each city is proportional to the
 population of that city.
 
-```{r, echo=FALSE}
-md_cities <- data.frame(name = c("Groningen", "Haren", "Hoogezand-Sappemeer", "Bedum", "Winsum", "Delfzijl", 
-                                 "Zuidhorn", "Leek"),
-                        pop = c(233273, 19860, 34232, 10475, 13560, 24678,
-                                18917, 19669),
+```{r, echo=FALSE,  message=FALSE}
+md_cities <- data.frame(name = c("Groningen", "Haren", "Hoogezand-Sappemeer", "Bedum", "Winsum", "Delfzijl", "Zuidhorn", "Leek"),
+                        pop = c(233273, 19860, 34232, 10475, 13560, 24678, 18917, 19669),
                         lat = c(53.21990107176437, 53.17414197071955, 53.16541182035367, 53.30041735069393, 53.32788974756013, 53.33243444483125, 53.2489688892776, 53.16601267362363),
                         lng = c(6.5678774827168285, 6.603145682715071, 6.788270540386576, 6.60106461340732, 6.515855389566622, 6.923327952033857, 6.40669074038981, 6.386341684566239))
 md_cities %>%
@@ -157,4 +155,17 @@ md_cities %>%
     addCircles(weight = 1, radius = sqrt(md_cities$pop) * 12)
 ```
 
+## Add custom marker
+```{r, echo=FALSE, warning=FALSE,  message=FALSE}
+cityCenterIcon <- makeIcon(
+  iconUrl = "./images/marker1.png",
+  iconWidth = 32, iconHeight = 32,
+  iconAnchorX = 0, iconAnchorY = 0)
 
+
+md_cities %>%
+    leaflet() %>%
+    addTiles() %>%
+    addCircles(weight = 1, radius = sqrt(md_cities$pop) * 12) %>%
+    addMarkers(icon = cityCenterIcon)
+```
