@@ -1,0 +1,50 @@
+---
+title: "DSS-09-DevelopingDataProducts-PeerAssignment1"
+author: "Paul Bruynel"
+date: "June 15, 2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, echo=TRUE, warning=FALSE,  message=FALSE}
+library(leaflet)
+md_cities <- data.frame(name = c("Groningen", "Haren", "Hoogezand-Sappemeer", "Bedum", "Winsum", "Delfzijl", "Zuidhorn", "Leek"),
+                        pop = c(233273, 19860, 34232, 10475, 13560, 24678, 18917, 19669),
+                        lat = c(53.21990107176437, 53.17414197071955, 53.16541182035367, 53.30041735069393, 53.32788974756013, 53.33243444483125, 53.2489688892776, 53.16601267362363),
+                        lng = c(6.5678774827168285, 6.603145682715071, 6.788270540386576, 6.60106461340732, 6.515855389566622, 6.923327952033857, 6.40669074038981, 6.386341684566239))
+
+cityCenterIcon <- makeIcon(
+  iconUrl = "./images/marker1.png",
+  iconWidth = 32, iconHeight = 32,
+  iconAnchorX = 0, iconAnchorY = 0)
+
+gemeenteSites <- c(
+  paste("<a href='https://gemeente.groningen.nl/'>Gemeente Groningen, locatie Groningen</a><br>
+  Population: ", md_cities$pop[1]),
+  paste("<a href='https://gemeente.groningen.nl/'>Gemeente Groningen, locatie Haren</a><br>
+  Population: ", md_cities$pop[2]),
+  paste("<a href='https://www.midden-groningen.nl/'>Gemeente Midden-Groningen, locatie Hoogezand-Sappemeer</a><br>
+  Population: ", md_cities$pop[3]),
+  paste("<a href='https://hethogeland.nl/'>Gemeente Het Hogeland, locatie Bedum</a><br>
+  Population: ", md_cities$pop[4]),
+  paste("<a href='https://hethogeland.nl/'>Gemeente Het Hogeland, locatie Winsum</a><br>
+  Population: ", md_cities$pop[5]),
+  paste("<a href='https://www.eemsdelta.nl/contact'>Gemeente Eemsdelta, locatie Delfzijl</a><br>
+  Population: ", md_cities$pop[6]),
+  paste("<a href='https://www.westerkwartier.nl/'>Gemeente Westerkwartier, locatie Zuidhorn</a><br>
+  Population: ", md_cities$pop[7]),
+  paste("<a href='https://www.westerkwartier.nl/'>Gemeente Westerkwartier, locatie Leek</a><br>
+  Population: ", md_cities$pop[8])
+)
+
+
+md_cities %>%
+    leaflet() %>%
+    addTiles() %>%
+    addCircles(weight = 1, radius = sqrt(md_cities$pop) * 12) %>%
+    addMarkers(icon = cityCenterIcon, popup = gemeenteSites)
+```
+
